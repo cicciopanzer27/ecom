@@ -1,8 +1,8 @@
-# NURA - E-commerce Olio Extra Vergine di Oliva Sardo
+# E-commerce Olio Extra Vergine di Oliva Sardo
 
 ## Panoramica del Progetto
 
-NURA è un e-commerce moderno e professionale sviluppato per la vendita di oli d'oliva extra vergine prodotti in Sardegna. Il sito rappresenta un significativo miglioramento rispetto al prototipo Lovable precedente, offrendo un'esperienza utente coinvolgente e funzionalità e-commerce complete.
+E-commerce moderno e professionale sviluppato per la vendita di oli d'oliva extra vergine prodotti in Sardegna. 
 
 ## Caratteristiche Principali
 

@@ -43,16 +43,6 @@ pnpm run dev
 pnpm run build
 ```
 
-## Miglioramenti Rispetto al Prototipo Precedente
-
-- ✅ **Identità visiva coerente** con il brand NURA
-- ✅ **Layout professionale** e moderno
-- ✅ **Sistema carrello completo** con gestione stato
-- ✅ **Responsive design** ottimizzato
-- ✅ **Storytelling integrato** della marca
-
----
-
 **Sviluppato per NURA - Olio Extra Vergine di Oliva Sardo**
 
 ## Responsive & Breakpoints

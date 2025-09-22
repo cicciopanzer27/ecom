@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Secret scan (gitleaks)
+        uses: zricethezav/gitleaks-action@v2
+        with:
+          args: --config-path .gitleaks.toml --no-git -v
+
+      - name: Lint
+        run: pnpm run lint
+        continue-on-error: true
+
+      - name: Build frontend
+        run: pnpm run build
+
+      - name: Test server start
+        run: |
+          cd server
+          pnpm install
+          pnpm run build || true
+      

@@ -1,0 +1,42 @@
+# Node
+node_modules/
+.pnpm-store/
+.pnpm-debug.log
+
+# Vite
+dist/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Husky
+.husky/_
+
+# IDE
+.vscode/
+.idea/
+
+# Build outputs
+coverage/
+
+# Lockfiles (if you prefer pnpm-lock, keep it)
+# package-lock.json
+
+# Secrets
+*.pem
+*.key
+
+# Others
+build/

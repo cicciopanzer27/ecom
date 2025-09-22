@@ -401,6 +401,38 @@
 
 ---
 
+## SECURITY REMEDIATION: NPM AUDIT (STATUS & ACTIONS)
+
+- Stato attuale: rilevate 3 vulnerabilità ad alta severità (transitive, legate a `semver` tramite `nodemon`/`simple-update-notifier`).
+- Impatto: le vulnerabilità sono attualmente all'interno di dipendenze di sviluppo; basso rischio a runtime se non installi `devDependencies` in produzione. Tuttavia è buona pratica correggerle.
+
+### Azioni consigliate
+- 1) Applicare un override per forzare la versione patched di `semver` (rapido, consigliato)
+  - Aggiungere a `server/package.json` (root dell'oggetto JSON):
+
+```json
+"overrides": {
+  "semver": "7.5.2"
+}
+```
+
+  - Eseguire: `cd server && npm.cmd install` e poi `npm.cmd audit`.
+
+- 2) Alternativa: aggiornare nodemon a v3 (breaking change) con `npm.cmd install --save-dev nodemon@3.1.10` e testare dev workflow.
+
+- 3) Opzione rapida ma invasiva: `npm.cmd audit fix --force` (sconsigliato su main senza test).
+
+### Stato in repo
+- Task "Remediate npm audit vulnerabilities" aggiunto alla TODO e marcato in-progress. Prima di procedere su `main` viene raccomandato:
+  - eseguire override e test locali
+  - committare `package-lock.json` aggiornato
+  - aprire PR su branch di feature se si preferisce la revisione
+
+---
+
+
+---
+
 ## STATO REPOSITORY E TASK SPECIFICI (PROGETTO React + Express)
 
 Questo progetto è un'app React (Vite) con un backend Node/Express minimale nella cartella `server/`.

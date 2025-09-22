@@ -1,0 +1,8 @@
+Avviare localmente (consigliato: due terminali PowerShell)
+Terminale 1 — backend:
+Terminale 2 — frontend:
+Poi apri:
+
+Frontend: http://localhost:5173
+Backend health: http://localhost:4000/health
+API prodotti: http://localhost:4000/api/products

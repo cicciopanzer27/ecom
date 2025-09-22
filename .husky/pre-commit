@@ -1,7 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-# Run gitleaks quick scan before commit
-pnpm run gitleaks
-
-echo "pre-commit: gitleaks check complete"

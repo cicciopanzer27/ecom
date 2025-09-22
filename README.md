@@ -29,23 +29,6 @@ E-commerce moderno e professionale sviluppato per la vendita di oli d'oliva extr
 - **shadcn/ui** - Componenti UI di alta qualità
 - **Lucide React** - Icone moderne e scalabili
 
-## Prodotti Disponibili
-
-### 1. Olio Extra Vergine di Oliva - €24.90
-- **Bestseller** del catalogo
-- Estratto a freddo dalle migliori olive sarde
-- Acidità inferiore a 0.3%
-- Formato 500ml
-
-### 2. Aromatizzato al Lentisco - €28.90
-- **Edizione Limitata**
-- Aromatizzato con lentisco selvatico sardo
-- Ideale per piatti di pesce
-
-### 3. Aromatizzato al Mirto - €28.90
-- **Novità** della gamma
-- Con bacche di mirto della tradizione sarda
-- Perfetto per carni
 
 ## Installazione e Avvio
 

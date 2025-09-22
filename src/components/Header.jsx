@@ -60,23 +60,8 @@ const Header = ({ cartItems = 0, onCartClick }) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={onCartClick}
-              aria-label="Open cart"
-              className="relative"
-            >
-              <ShoppingCart className="h-6 w-6" />
-              {cartItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {cartItems}
-                </span>
-              )}
-            </Button>
-
-            <Button variant="ghost" size="sm" onClick={toggleMenu} aria-label="Open menu">
+          <div className="md:hidden">
+            <Button variant="ghost" size="sm" onClick={toggleMenu}>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>

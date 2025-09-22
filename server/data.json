@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "sku": "SKU001",
+      "title": "Example Product 1",
+      "price": 19.9,
+      "currency": "EUR",
+      "inventory": 10
+    },
+    {
+      "id": "p2",
+      "sku": "SKU002",
+      "title": "Example Product 2",
+      "price": 29.9,
+      "currency": "EUR",
+      "inventory": 5
+    }
+  ],
+  "orders": []
+}

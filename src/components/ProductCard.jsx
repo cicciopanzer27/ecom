@@ -24,7 +24,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         <img 
           src={product.image} 
           alt={product.name}
-          className="w-full h-48 sm:h-64 md:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         
         {/* Overlay Actions */}
@@ -50,7 +50,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       </div>
 
       {/* Content */}
-  <div className="p-4 sm:p-6 space-y-4">
+      <div className="p-6 space-y-4">
         {/* Header */}
         <div className="space-y-2">
           <h3 className="text-xl font-bold text-stone-800 group-hover:text-amber-600 transition-colors">
@@ -83,7 +83,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         </div>
 
         {/* Price and Actions */}
-          <div className="border-t border-stone-200 pt-4 space-y-4">
+        <div className="border-t border-stone-200 pt-4 space-y-4">
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <div className="text-2xl font-bold text-stone-800">
@@ -133,12 +133,12 @@ const ProductCard = ({ product, onAddToCart }) => {
 
           {/* Add to Cart Button */}
             <Button 
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3"
-              onClick={handleAddToCart}
-            >
-              <ShoppingCart className="mr-2 h-4 w-4" />
-              {t('addToCart')}
-            </Button>
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3"
+            onClick={handleAddToCart}
+          >
+            <ShoppingCart className="mr-2 h-4 w-4" />
+            {t('addToCart')}
+          </Button>
         </div>
       </div>
     </div>

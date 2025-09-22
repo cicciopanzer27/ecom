@@ -1,25 +1,117 @@
+import React, { useState, useEffect } from 'react'
 import ProductCard from './ProductCard'
 import { Leaf, Droplets, Sparkles } from 'lucide-react'
 import { useLanguage } from '../LanguageContext'
-import { useEffect, useState } from 'react'
 
-// Products fetched from API
+// Import delle immagini
+import olio1 from '../assets/o2.jpg'
+import olio2 from '../assets/o3.jpg'
+import olio3 from '../assets/o4.jpg'
+import olio4 from '../assets/o5.jpg'
+import olio5 from '../assets/o6.jpg'
+
 const Products = ({ onAddToCart }) => {
   const { t } = useLanguage()
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+
+  // Default (local) products used as fallback when the backend is unavailable
+  const localProducts = [
+    {
+      id: 1,
+      name: t('classicOil'),
+      description: t('classicDesc'),
+      price: 24.9,
+      originalPrice: 29.9,
+      size: '500ml',
+      image: olio2,
+      rating: 5,
+      reviews: 47,
+      badge: t('bestseller'),
+      features: [
+        t('coldExtracted'),
+        t('sardianOlives'),
+        t('lowAcidity'),
+        t('harvest2024')
+      ]
+    },
+    {
+      id: 2,
+      name: t('lentiscoOil'),
+      description: t('lentiscoDesc'),
+      price: 28.9,
+      size: '500ml',
+      image: olio3,
+      rating: 5,
+      reviews: 32,
+      badge: t('limitedEdition'),
+      features: [
+        t('wildLentisco'),
+        t('mediterraneanAroma'),
+        t('limitedProduction'),
+        t('idealForFish')
+      ]
+    },
+    {
+      id: 3,
+      name: t('mirtoOil'),
+      description: t('mirtoDesc'),
+      price: 28.9,
+      size: '500ml',
+      image: olio4,
+      rating: 5,
+      reviews: 28,
+      badge: t('newProduct'),
+      features: [
+        t('myrtle'),
+        t('intenseFlavorTitle'),
+        t('sardianTradition'),
+        t('perfectForMeat')
+      ]
+    }
+  ]
+
+  const [products, setProducts] = useState(localProducts)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+
+  // Determine API base: prefer Vite env, then window var, then localhost
+  const API_BASE = import.meta.env.VITE_API_BASE || window.__API_BASE__ || 'http://localhost:4000'
 
   useEffect(() => {
     let mounted = true
-    setLoading(true)
-    fetch('/api/products')
-      .then(r => r.json())
-      .then(data => { if (mounted) setProducts(data) })
-      .catch(err => { if (mounted) setError(err.message) })
-      .finally(() => { if (mounted) setLoading(false) })
+    const fetchProducts = async () => {
+      setLoading(true)
+      setError(null)
+      try {
+        const res = await fetch(`${API_BASE}/api/products`, { cache: 'no-store' })
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`)
+        const data = await res.json()
+        if (mounted && Array.isArray(data) && data.length > 0) {
+          // Map backend product shape to the frontend shape if needed
+          const mapped = data.map((p) => ({
+            id: p.id,
+            name: p.title || p.name || p.sku,
+            description: p.description || '',
+            price: p.price || 0,
+            size: p.size || '500ml',
+            image: p.image || olio2,
+            rating: p.rating || 5,
+            reviews: p.reviews || 0,
+            badge: p.badge || null,
+            features: p.features || []
+          }))
+          setProducts(mapped)
+        }
+      } catch (err) {
+        console.warn('Could not fetch products from API:', err.message)
+        setError(err.message)
+      } finally {
+        if (mounted) setLoading(false)
+      }
+    }
+
+    fetchProducts()
     return () => { mounted = false }
-  }, [])
+  }, [API_BASE])
 
   return (
     <section id="prodotti" className="py-20 bg-white">
@@ -74,10 +166,21 @@ const Products = ({ onAddToCart }) => {
         </div>
 
         {/* Products Grid */}
+        {loading && (
+          <div className="text-center py-12">
+            <div className="loader mx-auto mb-4" />
+            <p className="text-stone-600">{t('loadingProducts') || 'Caricamento prodotti...'}</p>
+          </div>
+        )}
+
+        {error && (
+          <div className="p-4 mb-6 rounded-lg bg-rose-50 border border-rose-100 text-rose-700">
+            {t('productsLoadError') || 'Impossibile caricare i prodotti dal server. Vengono mostrati i prodotti demo.'}
+          </div>
+        )}
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {loading && <div className="col-span-full text-center">Caricamento prodotti...</div>}
-          {error && <div className="col-span-full text-center text-red-500">Errore: {error}</div>}
-          {!loading && !error && products.map((product) => (
+          {products.map((product) => (
             <ProductCard 
               key={product.id} 
               product={product} 

@@ -24,11 +24,11 @@ const Cart = ({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCh
         onClick={onClose}
       />
       
-      {/* Cart Panel: bottom-sheet on mobile, side drawer on md+ */}
-      <div className="absolute left-0 right-0 bottom-0 md:top-0 md:right-0 md:left-auto h-3/4 md:h-full w-full md:w-full max-w-md bg-white shadow-2xl rounded-t-lg md:rounded-none overflow-hidden">
+      {/* Cart Panel */}
+      <div className="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl">
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 md:p-6 border-b border-stone-200">
+          <div className="flex items-center justify-between p-6 border-b border-stone-200">
             <div className="flex items-center space-x-2">
               <ShoppingBag className="h-6 w-6 text-amber-600" />
               <h2 className="text-xl font-bold text-stone-800">
@@ -41,7 +41,7 @@ const Cart = ({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCh
           </div>
 
           {/* Cart Items */}
-          <div className="flex-1 overflow-y-auto p-4 md:p-6">
+          <div className="flex-1 overflow-y-auto p-6">
             {cartItems.length === 0 ? (
               <div className="text-center py-12">
                 <ShoppingBag className="h-16 w-16 text-stone-300 mx-auto mb-4" />
@@ -61,12 +61,12 @@ const Cart = ({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCh
             ) : (
               <div className="space-y-4">
                 {cartItems.map((item) => (
-                  <div key={`${item.id}-${item.size}`} className="bg-stone-50 rounded-lg p-3 md:p-4">
-                    <div className="flex items-start space-x-3 md:space-x-4">
+                  <div key={`${item.id}-${item.size}`} className="bg-stone-50 rounded-lg p-4">
+                    <div className="flex items-start space-x-4">
                       <img 
                         src={item.image} 
                         alt={item.name}
-                        className="w-14 h-14 md:w-16 md:h-16 object-cover rounded-lg"
+                        className="w-16 h-16 object-cover rounded-lg"
                       />
                       
                       <div className="flex-1 space-y-2">
@@ -78,12 +78,12 @@ const Cart = ({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCh
                         </p>
                         
                         <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
+                          <div className="flex items-center space-x-2">
                             <Button
                               variant="ghost"
                               size="sm"
-                className="h-8 w-8 p-0 md:h-6 md:w-6"
-                              onClick={() => onUpdateQuantity(item.id, item.size, item.quantity - 1)}
+                              className="h-6 w-6 p-0"
+                              onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
                               disabled={item.quantity <= 1}
                             >
                               <Minus className="h-3 w-3" />
@@ -94,8 +94,8 @@ const Cart = ({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCh
                             <Button
                               variant="ghost"
                               size="sm"
-                className="h-8 w-8 p-0 md:h-6 md:w-6"
-                              onClick={() => onUpdateQuantity(item.id, item.size, item.quantity + 1)}
+                              className="h-6 w-6 p-0"
+                              onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
                             >
                               <Plus className="h-3 w-3" />
                             </Button>
@@ -109,7 +109,7 @@ const Cart = ({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCh
                               variant="ghost"
                               size="sm"
                               className="h-6 w-6 p-0 text-red-500 hover:text-red-700"
-                              onClick={() => onRemoveItem(item.id, item.size)}
+                              onClick={() => onRemoveItem(item.id)}
                             >
                               <Trash2 className="h-3 w-3" />
                             </Button>
@@ -153,10 +153,10 @@ const Cart = ({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onCh
 
               {/* Checkout Button */}
               <Button 
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3"
-                  onClick={handleCheckout}
-                  disabled={isCheckingOut}
-                >
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3"
+                onClick={handleCheckout}
+                disabled={isCheckingOut}
+              >
                 {isCheckingOut ? (
                   "Elaborazione..."
                 ) : (

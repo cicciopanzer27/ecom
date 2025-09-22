@@ -8,8 +8,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-green-50 to-stone-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
@@ -89,16 +89,16 @@ const Hero = () => {
               <img 
                 src={heroImage} 
                 alt="Oli NURA - Prodotti artigianali sardi" 
-                className="w-full h-56 sm:h-72 md:h-96 lg:h-[600px] object-cover"
+                className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
             
             {/* Floating Badge */}
-            <div className="absolute -bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg border border-stone-200">
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-stone-200">
               <div className="text-center">
-                <div className="text-lg sm:text-2xl font-bold text-green-700">NURA</div>
-                <div className="text-xs sm:text-sm text-stone-600">{t('limitedEdition')}</div>
+                <div className="text-2xl font-bold text-green-700">NURA</div>
+                <div className="text-sm text-stone-600">{t('limitedEdition')}</div>
               </div>
             </div>
           </div>

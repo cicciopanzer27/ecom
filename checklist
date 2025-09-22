@@ -1,0 +1,584 @@
+# CHECKLIST TECNICA COMPLETA E-COMMERCE NURA
+**Da Zero a Deployment Completo**
+
+---
+
+## FASE 1: SETUP INIZIALE E INFRASTRUTTURA
+
+### 1.1 DOMINIO E HOSTING
+- [ ] **Registrazione dominio**
+  - Verificare disponibilità nura.it / nura.com
+  - Configurare DNS su Cloudflare
+  - Setup redirect www/non-www
+  - Tempo: 1 giorno
+
+- [ ] **Setup hosting**
+  - SiteGround GrowBig o Kinsta Starter
+  - Installazione WordPress ultima versione
+  - Configurazione PHP 8.1+, MySQL 8.0+
+  - Setup staging environment
+  - Tempo: 2 ore
+
+- [ ] **Sicurezza base**
+  - Installazione SSL certificato (Let's Encrypt)
+  - Configurazione Cloudflare (DNS + CDN)
+  - Cambio credenziali di default WordPress
+  - Rimozione utente "admin"
+  - Tempo: 1 ora
+
+### 1.2 WORDPRESS CORE SETUP
+- [ ] **Configurazione WordPress**
+  - Permalink structure: /%postname%/
+  - Timezone Italia/Roma
+  - Lingua italiana
+  - Disabilitazione commenti globalmente
+  - Rimozione plugin/theme inutili
+  - Tempo: 30 minuti
+
+- [ ] **Plugin essenziali base**
+  - WooCommerce (ultima versione)
+  - Yoast SEO Premium
+  - Wordfence Security
+  - UpdraftPlus Backup
+  - WP Rocket Cache
+  - Tempo: 1 ora
+
+---
+
+## FASE 2: WOOCOMMERCE CONFIGURATION
+
+### 2.1 SETUP WOOCOMMERCE BASE
+- [ ] **Wizard configurazione**
+  - Paese: Italia
+  - Valuta: EUR (€)
+  - Unità di misura: millilitri/litri
+  - Classe fiscale: Standard 22%
+  - Abilitazione guest checkout
+  - Tempo: 30 minuti
+
+- [ ] **Configurazione prodotti**
+  - Categorie: Olio EVO, Aromatizzati, Bundle
+  - Attributi: Formato (250ml, 500ml, 1L), Sapore (Lentisco, Mirto, Naturale)
+  - Tag: Biologico, DOP, Prima spremitura
+  - Stock management abilitato
+  - Tempo: 1 ora
+
+- [ ] **Tasse e prezzi**
+  - Setup IVA 22% per prodotti alimentari
+  - Prezzi comprensivi di IVA
+  - Configurazione fatturazione B2B (se necessario)
+  - Tempo: 30 minuti
+
+### 2.2 METODI PAGAMENTO
+- [ ] **Stripe integration**
+  - Account Stripe business
+  - Plugin WooCommerce Stripe Gateway
+  - Test con carte di prova
+  - Configurazione webhook
+  - Tempo: 2 ore
+
+- [ ] **PayPal Business**
+  - Account PayPal Business verificato
+  - Plugin PayPal for WooCommerce
+  - Test transazioni
+  - Configurazione IPN
+  - Tempo: 1 ora
+
+- [ ] **Bonifico bancario**
+  - Coordinate bancarie in checkout
+  - Email automatica con istruzioni
+  - Gestione ordini "in attesa"
+  - Tempo: 30 minuti
+
+### 2.3 SPEDIZIONI
+- [ ] **Zone di spedizione**
+  - Italia: Corriere espresso (€8), Standard (€5)
+  - UE: €15 spedizione
+  - Mondo: €25 spedizione
+  - Spedizione gratuita sopra €50 (Italia)
+  - Tempo: 1 ora
+
+- [ ] **Plugin spedizioni**
+  - WooCommerce Shipping o Table Rate
+  - Integrazione Poste/SDA/BRT
+  - Calcolo dimensionale per packaging
+  - Tempo: 2 ore
+
+---
+
+## FASE 3: DESIGN E TEMA
+
+### 3.1 TEMA E PERSONALIZZAZIONI
+- [ ] **Tema WooCommerce**
+  - Storefront/Astra Pro o tema custom
+  - Child theme setup
+  - Customizer configurazioni base
+  - Upload logo NURA alta risoluzione
+  - Tempo: 3 ore
+
+- [ ] **Colori e typography**
+  - Palette colori NURA (verde, beige, nero)
+  - Font: Google Fonts (Playfair Display + Inter)
+  - CSS custom per brand consistency
+  - Tempo: 2 ore
+
+- [ ] **Header e navigation**
+  - Menu principale: Home, Prodotti, Chi Siamo, Contatti
+  - Carrello icon sempre visibile
+  - Search bar prodotti
+  - Mobile menu hamburger
+  - Tempo: 2 ore
+
+### 3.2 HOMEPAGE DESIGN
+- [ ] **Hero section**
+  - Slider con immagini oliveto/prodotti
+  - CTA principale "Scopri i nostri oli"
+  - Value proposition NURA
+  - Tempo: 3 ore
+
+- [ ] **Sezioni homepage**
+  - Prodotti in evidenza (3-4 prodotti)
+  - Chi siamo (breve con link)
+  - Territorio e tradizione
+  - Recensioni clienti
+  - Newsletter signup
+  - Tempo: 4 ore
+
+### 3.3 PAGINE PRODOTTO
+- [ ] **Template prodotto**
+  - Gallery immagini con zoom
+  - Descrizione dettagliata
+  - Informazioni nutrizionali
+  - Cross-sell prodotti correlati
+  - Scheda tecnica (acidità, sapore)
+  - Tempo: 3 ore
+
+- [ ] **Varianti prodotto**
+  - Selezione formato (250ml/500ml/1L)
+  - Aggiornamento prezzo dinamico
+  - Stock per variante
+  - Tempo: 2 ore
+
+---
+
+## FASE 4: CONTENUTI E COPYWRITING
+
+### 4.1 PAGINE ISTITUZIONALI
+- [ ] **Chi Siamo**
+  - Storia famiglia/azienda
+  - Territorio e tradizione
+  - Processo produttivo
+  - Certificazioni
+  - Tempo: 2 ore
+
+- [ ] **Contatti**
+  - Form contatto + mappa
+  - Indirizzo fisico
+  - Telefono e orari
+  - Social links
+  - Tempo: 1 ora
+
+- [ ] **Pagine legali**
+  - Privacy Policy GDPR compliant
+  - Termini e Condizioni vendita
+  - Cookie Policy
+  - Informazioni spedizioni e resi
+  - Tempo: 3 ore
+
+### 4.2 DESCRIZIONI PRODOTTI
+- [ ] **Copywriting prodotti**
+  - Descrizioni accattivanti per ogni prodotto
+  - Benefici e caratteristiche
+  - Abbinamenti culinari
+  - Storia della cultivar
+  - Tempo: 4 ore
+
+### 4.3 SCHEDE TECNICHE
+- [ ] **Informazioni prodotto**
+  - Valori nutrizionali per 100ml
+  - Grado di acidità
+  - Provenienza olive
+  - Data raccolta e spremitura
+  - Modalità conservazione
+  - Tempo: 2 ore
+
+---
+
+## FASE 5: SEO E OTTIMIZZAZIONI
+
+### 5.1 SEO ON-PAGE
+- [ ] **Yoast SEO configuration**
+  - Sitemap XML abilitata
+  - Breadcrumb navigation
+  - Schema markup prodotti alimentari
+  - Meta title/description per tutte le pagine
+  - Tempo: 2 ore
+
+- [ ] **Keyword research**
+  - "olio extravergine sardegna"
+  - "olio biologico narbolia"
+  - "olio aromatizzato mirto/lentisco"
+  - Long tail keywords per ogni prodotto
+  - Tempo: 3 ore
+
+- [ ] **Ottimizzazione contenuti**
+  - Title tag ottimizzati
+  - H1, H2 structure corretta
+  - Alt text per tutte le immagini
+  - URL structure SEO-friendly
+  - Internal linking strategy
+  - Tempo: 4 ore
+
+### 5.2 TECHNICAL SEO
+- [ ] **Core Web Vitals**
+  - Ottimizzazione immagini (WebP format)
+  - Lazy loading implementation
+  - Critical CSS inline
+  - JavaScript defer/async
+  - Tempo: 3 ore
+
+- [ ] **Mobile optimization**
+  - Responsive design test
+  - Touch-friendly buttons
+  - Mobile page speed optimization
+  - Tempo: 2 ore
+
+### 5.3 SCHEMA MARKUP
+- [ ] **Structured data**
+  - Product schema per e-commerce
+  - Organization schema
+  - LocalBusiness schema
+  - Review/Rating schema
+  - BreadcrumbList schema
+  - Tempo: 2 ore
+
+---
+
+## FASE 6: FUNZIONALITÀ AVANZATE
+
+### 6.1 EMAIL MARKETING
+- [ ] **Klaviyo/Mailchimp setup**
+  - Account e API integration
+  - Form newsletter responsive
+  - Welcome series automation
+  - Carrello abbandonato (3 email)
+  - Post-purchase follow up
+  - Tempo: 4 ore
+
+- [ ] **Email transazionali**
+  - Template ordine ricevuto
+  - Conferma spedizione con tracking
+  - Fattura PDF automatica
+  - Email richiesta recensione
+  - Tempo: 2 ore
+
+### 6.2 RECENSIONI E SOCIAL PROOF
+- [ ] **Sistema recensioni**
+  - WooCommerce native reviews
+  - Integration Google Reviews
+  - Schema markup per stelle
+  - Email automatica richiesta recensione
+  - Tempo: 2 ore
+
+- [ ] **Social media integration**
+  - Instagram feed homepage
+  - Social share buttons
+  - Facebook Pixel implementation
+  - WhatsApp quick contact
+  - Tempo: 2 ore
+
+### 6.3 ANALYTICS E TRACKING
+- [ ] **Google Analytics 4**
+  - Account setup completo
+  - E-commerce tracking enhanced
+  - Goal configuration (acquisti, newsletter)
+  - Audience segmentation
+  - Tempo: 2 ore
+
+- [ ] **Google Tag Manager**
+  - Container setup
+  - E-commerce tracking events
+  - Facebook Pixel via GTM
+  - Conversion tracking setup
+  - Tempo: 3 ore
+
+---
+
+## FASE 7: PERFORMANCE E SICUREZZA
+
+### 7.1 CACHE E PERFORMANCE
+- [ ] **WP Rocket configuration**
+  - Page caching abilitato
+  - Browser caching headers
+  - GZIP compression
+  - Database optimization
+  - Tempo: 1 ora
+
+- [ ] **Cloudflare optimization**
+  - CDN configuration
+  - Minification CSS/JS
+  - Image optimization
+  - Security rules
+  - Tempo: 2 ore
+
+- [ ] **Database optimization**
+  - Plugin WP-Optimize
+  - Cleanup revisioni/spam
+  - Autoload optimization
+  - Index database optimization
+  - Tempo: 1 ora
+
+### 7.2 SICUREZZA AVANZATA
+- [ ] **Wordfence Premium**
+  - Firewall configuration
+  - Malware scanning
+  - Login security (2FA)
+  - IP blocking rules
+  - Tempo: 2 ore
+
+- [ ] **Backup automation**
+  - UpdraftPlus schedule
+  - Backup su cloud (Google Drive/Dropbox)
+  - Database backup separato
+  - Restore testing
+  - Tempo: 1 ora
+
+### 7.3 MONITORING
+- [ ] **Uptime monitoring**
+  - Pingdom o UptimeRobot
+  - Alert email/SMS
+  - Performance monitoring
+  - Tempo: 30 minuti
+
+---
+
+## FASE 8: TESTING COMPLETO
+
+### 8.1 FUNCTIONAL TESTING
+- [ ] **Processo di acquisto**
+  - Test carrello add/remove
+  - Checkout completo con ogni payment
+  - Test guest vs registered checkout
+  - Email confirmation testing
+  - Tempo: 3 ore
+
+- [ ] **Responsive testing**
+  - Desktop (1920px, 1366px)
+  - Tablet (768px, 1024px)  
+  - Mobile (375px, 414px)
+  - Cross-browser (Chrome, Firefox, Safari)
+  - Tempo: 2 ore
+
+- [ ] **Performance testing**
+  - Google PageSpeed Insights
+  - GTmetrix full analysis
+  - WebPageTest.org
+  - Core Web Vitals check
+  - Tempo: 1 ora
+
+### 8.2 SECURITY TESTING
+- [ ] **Security scan**
+  - WPScan vulnerability check
+  - SSL certificate validation
+  - OWASP basic checks
+  - Plugin vulnerability scan
+  - Tempo: 1 ora
+
+### 8.3 USER TESTING
+- [ ] **Usability testing**
+  - Task completion: trovare e acquistare prodotto
+  - Navigation testing
+  - Form submission testing
+  - Mobile usability
+  - Tempo: 2 ore
+
+---
+
+## FASE 9: DEPLOY E GO-LIVE
+
+### 9.1 PRE-LAUNCH
+- [ ] **Final checklist**
+
+---
+
+## STATO REPOSITORY E TASK SPECIFICI (PROGETTO React + Express)
+
+Questo progetto è un'app React (Vite) con un backend Node/Express minimale nella cartella `server/`.
+Di seguito uno stato sintetico e azioni chiare rimanenti per portare tutto in produzione.
+
+### Cosa è già stato fatto
+- Frontend React con Vite: struttura `src/`, componenti UI, carrello client-side.
+- Backend Express minimale in `server/` con endpoints:
+  - GET /health
+  - GET /api/products
+  - GET /api/products/:id
+  - GET /api/orders
+  - POST /api/orders
+- Integrazione frontend -> backend: `src/components/Products.jsx` ora fa fetch a `http://localhost:4000/api/products` con fallback.
+- File `TODO.md` aggiornato con checklist di deploy e manutenzione.
+
+### Task rimanenti (priorità alta)
+1) Repository GitHub
+  - [ ] Creare repo `cicciopanzer27/ecom` e push del codice attuale.
+  - [ ] Proteggere branch `main` (branch protection rules) e abilitare PR reviews.
+
+2) CI/CD iniziale
+  - [ ] Aggiungere workflow GitHub Actions che esegua: install, lint, test, build.
+  - [ ] Configurare deploy preview per PR (Vercel/Netlify preview deployments).
+
+3) Database di produzione
+  - [ ] Migrare il file-based store a Postgres o SQLite (consiglio: Prisma + SQLite per staging, Postgres per produzione).
+  - [ ] Implementare migrations e seed script per prodotti iniziali.
+
+4) Integrazione pagamento e webhooks
+  - [ ] Implementare endpoint di checkout che crei l'ordine e avvii il pagamento (Stripe recommended).
+  - [ ] Configurare e verificare webhook (firma verificata) su staging.
+
+5) Test e qualità
+  - [ ] Aggiungere unit tests per backend (Jest) e component tests per frontend (Vitest/React Testing Library).
+  - [ ] Almeno 1 test E2E (Playwright) per flusso add-to-cart -> checkout (sandbox).
+
+6) Security e hardening
+  - [ ] Aggiungere rate limiting, input validation (zod) e helmet per Express.
+  - [ ] Abilitare scanning dipendenze (Dependabot) e policy di aggiornamento.
+
+7) Logging e monitoring
+  - [ ] Integrare Sentry per error reporting e un sistema di logs centralizzato.
+
+8) Deploy e infrastruttura
+  - [ ] Scegliere provider per frontend (Vercel/Netlify) e backend (Render/Heroku/Cloud Run).
+  - [ ] Configurare domini, SSL e variabili d'ambiente.
+
+### Task rimanenti (priorità media)
+- Ottimizzazione immagini e caching CDN
+- Configurare analytics (GA4) e cookie banner
+- Documentazione runbook e playbook incident
+
+### Istruzioni per il push su GitHub (se vuoi che lo faccia io)
+1) Se hai già un token PAT con permessi repo, puoi condividerlo qui (NON raccomandato). Alternativa: esegui i comandi dal tuo terminale per autorizzare il push.
+2) Comandi consigliati (PowerShell):
+
+```powershell
+cd C:\Users\Mael\Desktop\nura-ecommerce
+git add .
+git commit -m "chore: update checklist with repo status and next steps"
+git remote add origin https://github.com/cicciopanzer27/ecom.git
+git branch -M main
+git push -u origin main
+```
+
+Se preferisci, posso provare a eseguire il push da qui; in caso di errore di autenticazione ti mostrerò esattamente cosa eseguire localmente o come creare un token.
+
+---
+
+Aggiornamento eseguito automaticamente: questa checklist riflette lo stato corrente del progetto e i passi successivi suggeriti.
+  - Backup completo staging
+  - DNS propagation check
+  - SSL certificate live
+  - All forms working
+  - Payment gateways live mode
+  - Tempo: 2 ore
+
+- [ ] **Content final check**
+  - Spelling/grammar check
+  - Image alt text completo
+  - Contact info updated
+  - Legal pages updated
+  - Tempo: 1 ora
+
+### 9.2 LAUNCH
+- [ ] **DNS switch**
+  - Puntamento dominio a hosting
+  - Cloudflare DNS update
+  - Redirect setup
+  - Tempo: 30 minuti + propagazione
+
+- [ ] **Post-launch checks**
+  - Site accessibility check
+  - Search engines submission
+  - Social media updates
+  - Google Analytics verification
+  - Tempo: 1 ora
+
+---
+
+## FASE 10: POST-LAUNCH E HANDOVER
+
+### 10.1 TRAINING CLIENTE
+- [ ] **WordPress dashboard**
+  - Gestione prodotti e stock
+  - Elaborazione ordini
+  - Gestione contenuti
+  - Analytics basic reading
+  - Tempo: 3 ore
+
+- [ ] **Documentazione**
+  - Manuale utente PDF
+  - Video tutorial registrati
+  - Troubleshooting common issues
+  - Contact info support
+  - Tempo: 4 ore
+
+### 10.2 MONITORING SETUP
+- [ ] **Daily/Weekly checks**
+  - Uptime monitoring attivo
+  - Backup verification
+  - Security scan scheduling
+  - Performance monitoring
+  - Tempo: 1 ora setup
+
+---
+
+## RIEPILOGO TEMPI E MILESTONE
+
+### TIMELINE COMPLETA: 6-8 SETTIMANE
+
+**Settimana 1-2: Infrastructure & Core**
+- Setup hosting, WordPress, WooCommerce
+- Configurazioni base sicurezza e pagamenti
+- 25 ore di lavoro
+
+**Settimana 3-4: Design & Content**  
+- Tema, design, homepage
+- Pagine prodotto e contenuti
+- 30 ore di lavoro
+
+**Settimana 5-6: SEO & Advanced Features**
+- Ottimizzazioni SEO, email marketing
+- Analytics e social integration
+- 25 ore di lavoro
+
+**Settimana 7-8: Testing & Launch**
+- Testing completo, deploy, training
+- 15 ore di lavoro
+
+**TOTALE ORE LAVORO: 95-110 ore**
+
+### DELIVERABLE FINALI
+- Sito e-commerce completo e funzionante
+- Pannello admin configurato
+- Documentazione e training
+- 3 mesi supporto tecnico incluso
+- Backup e security setup
+
+---
+
+## NOTE CRITICHE
+
+### ATTENZIONI SPECIALI SETTORE ALIMENTARE
+- Schema markup specifico per food products
+- Informazioni nutrizionali obbligatorie UE
+- Tracciabilità lotti (importante per controlli)
+- Conformità HACCP nelle descrizioni
+
+### GDPR COMPLIANCE
+- Cookie consent banner
+- Privacy policy specifica e-commerce
+- Data retention policies
+- Right to erasure implementation
+
+### PERFORMANCE TARGETS
+- PageSpeed Score > 90
+- First Contentful Paint < 1.5s
+- Largest Contentful Paint < 2.5s
+- Cumulative Layout Shift < 0.1

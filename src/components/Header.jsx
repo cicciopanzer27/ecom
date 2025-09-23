@@ -16,10 +16,9 @@ const Header = ({ cartItems = 0, onCartClick }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-green-800 tracking-tight">
-              NURA
-            </h1>
-            <p className="text-xs text-green-600 -mt-1">OLIO EVO SARDO</p>
+            <a href="#home">
+              <img src="/nura-logo-new.png" alt="NURA - OLIO EVO SARDO" className="h-16" />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -113,3 +112,5 @@ const Header = ({ cartItems = 0, onCartClick }) => {
 }
 
 export default Header
+
+
